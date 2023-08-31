@@ -1,10 +1,24 @@
-// Structural Varilog implementation for expression Y = AB
+module activity_2_structural_testbench();
+    reg A, B;
+    wire Y;
 
-module activity_2_structural_design (A, B, Y);
+  	activity_2_structural_design dut(A, B, Y);
 
-input A, B;
-output Y;
+    initial
+        begin
+            $dumpfile("dump.vcd");
+            $dumpvars(1);
 
-and U1 (S, A, B);
+            A = 0'b0;    B = 0'b0; #1;
+          	$display(A);
 
+    		A = 1'b1;    B = 0'b0; #1;
+          	$display(Y);
+	          
+    		A = 0'b0;    B = 1'b1; #1;
+          	$display(Y);
+	          
+    		A = 1'b1;    B = 1'b1; #1;
+          	$display(Y);
+        end
 endmodule
