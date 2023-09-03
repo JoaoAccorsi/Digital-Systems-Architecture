@@ -1,4 +1,4 @@
-// Behavioral Full Adder with Assign
+// Behavioral 1 Byte Full Adder with Assign
 
 `timescale 1ns/1ns
 
